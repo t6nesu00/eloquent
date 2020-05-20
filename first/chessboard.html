@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- write a program that creates a string in 8x8 grid -->
+    <!-- there is either space or # character -->
+    <!-- the characters shold form a chessboard -->
+    
+    <script>    
+     board = "";
+     size = 8;
+     for(i = 0; i <size; i++) {
+         for(j=0; j<size; j++) {
+             if ((i+j) % 2 == 0) {
+                 board += " ";
+             } else {
+                 board += "#";
+             }
+         }
+         board += "\n";
+     }
+     console.log(board);
+
+    </script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>
