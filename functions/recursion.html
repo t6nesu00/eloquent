@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- write a function that return boolean  -->
+    <!-- define recursive function isEven -->
+    
+    <script>
+     const isEven = (N) => {
+        if(N == 0) {
+            return true;
+        }
+        else if(N == 1) {
+            return false;
+        }
+        else if(N < 0){
+            return isEven(-N);
+        }
+        else {
+            return isEven(N-2)
+        }
+     }
+
+     console.log(isEven(50)); // true
+     console.log(isEven(75)); // false
+     console.log(isEven(-1)); // false
+
+
+    </script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>
