@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- write a function countBs that takes string as arguement  -->
+    <!-- count uppercase "B" and return the number -->
+    <!-- another function countChar that behaves as countBs -->
+    
+    <script>
+    function countBs(string) {
+        let count = 0;
+        for(let i = 0; i < string.length; i++) {
+            if(string[i] == "B") {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+    function countChar(string, ch) {
+        count = 0;
+        for(let i = 0; i < string.length; i++) {
+            if(string[i] == ch) {
+                count++;
+            }
+        }
+        return count;
+    }
+    console.log(countBs("Boon"));
+    console.log(countChar("Franklin", "n"));
+
+
+    </script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>
