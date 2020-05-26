@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there!</h2>
+    <!-- range function that produce array containing all the numbers -->
+    <!-- sum function that sums the numbers of an array -->
+    <!-- modify range function so it takes third arguement that indicates step while building array -->
+    
+
+    <script>
+
+
+      function range(start, end, step) {
+        let array = [];
+        if(step > 0) {
+          for(start = start; start <= end; start += step) {
+            array.push(start);
+          }
+        }
+        else if(step < 0) {
+          for(start = start; start >= end; start += step) {
+            array.push(start);
+          }
+        }
+        else {
+          for(start = start; start <= end; start++) {
+        array.push(start);
+        }
+        }
+        return array;
+      }
+      // function range(start, end) {
+      //   let array = [];
+      //   for(start = start; start <= end; start++) {
+      //   array.push(start);
+      //   }
+      //   return array;
+      // }
+      
+      array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      function sum(array) {
+        total = 0;
+        for(let numbers of array) {
+          total += numbers;
+        }
+        return total;
+      }
+      
+      console.log(sum(array));
+      console.log(range(5,2,-2));
+    </script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>
