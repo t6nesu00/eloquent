@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there! Inspect the changes from console.</h2>
+    <!-- reverserArray function that reverse the array -->
+    <!-- reverseArrayInPlace function that reverse array without using standar reverse method -->
+
+<script>
+     
+    var array = ["X", "Y", "Z"];
+    function reverseArray(array) {
+        newArray = [];
+        n = array.length -1; //2
+        for(i = n; i >= 0; i--) {
+            newArray.push(array[i]);
+        }
+        return newArray
+    } 
+
+    function reverseArrayInPlace(array) {
+        for (let i = 0; i < Math.floor(array.length / 2); i++) {
+            let old = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = old;
+        }
+        return array;
+        }   
+    console.log(reverseArray(array));
+    testArray = [1, 2, 3, 4, 5];
+    reverseArrayInPlace(testArray);
+    console.log(testArray);
+</script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>

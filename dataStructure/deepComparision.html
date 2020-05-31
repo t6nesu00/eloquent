@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there! Inspect the changes from console.</h2>
+
+<script>
+    function deepEqual(a, b) {
+        if(a === b) {
+            return true;
+        }
+
+        if( a == null || typeof a != "object" || b == null || typeof b != "object") {
+            return false;
+        }
+
+        let keysA = Object.keys(a), keysB = Object.keys(b);
+        if(keysA != keysB) {
+            return false;
+        }
+    }
+    console.log(deepEqual(2, 2));
+    let obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+// → true
+console.log(deepEqual(obj, {here: 1, object: 2}));
+// → false
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+// → true
+</script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>

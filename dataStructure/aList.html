@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there! Inspect the changes from console.</h2>
+    <!-- write list function -->
+
+<script>
+    let list = null;
+     function arrayToList(array) {
+        for(let i = array.length - 1; i >= 0 ; i--) {
+            list = { value: array[i], rest: list};
+        }
+        return list;
+     }
+
+     function prepend(element, list) {
+         return {element, rest: list};
+     }
+
+     function nth(list, number) {
+         if(!list) return undefined;
+         else if(number == 0) return list.value;
+         else return nth(list.rest, number - 1);
+     }
+
+     function listToArray(list) {
+         array = [];
+         for(let x = list; x; x = x.rest) {
+             array.push(x.value);
+         }
+         return array;
+     }
+
+ 
+    
+</script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>
