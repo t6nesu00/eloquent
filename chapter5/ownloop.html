@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there!</h2>
+   <!-- create your own funtion loop which behaves something like for loop statement -->
+    
+    <script>
+       function loop(n, test, update, body) {
+        for (let value = n; test(value); value = update(value)) {
+            body(value);
+        }
+    }
+
+    loop(5, n => n > 0, n => n - 1, console.log);
+
+    </script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>

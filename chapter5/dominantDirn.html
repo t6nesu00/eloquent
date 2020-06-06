@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there! check console</h2>
+    
+    <script>
+      function writingDirection(text) {
+          let counted = countBy(text, char => {
+              let script = characterScript(char.codePointAt(0));
+              return script ? script.direction : "none";
+          }).filter(({name}) => name != "none");
+
+          if(counted.length == 0) {
+              return "ltr";
+          }
+          else {
+              return counted.reduce((a, b) => a.count > b.count ? a : b).name;
+          }
+      }
+
+      console.log(writingDirection("Hello"));
+    </script>
+</body>
+</html>

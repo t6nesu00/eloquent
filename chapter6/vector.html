@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there! Inspect the changes from console.</h2>
+    <!-- write class Vec that represent two dimensional space -->
+
+<script>    
+    class Vec {
+        constructor(x, y) {
+            this.x = x; 
+            this.y = y; 
+        }
+        plus(z) {
+            return new Vec(this.x + z.x, this.y + z.y);
+        }
+        minus(z) {
+            return new Vec(this.x - z.x, this.y - z.y);
+        }
+        get length() {
+            return Math.sqrt(this.x * this.x + this.y * this.y);
+        }
+    }
+    console.log(new Vec(1, 2).plus(new Vec(2, 3)));
+    console.log(new Vec(1, 2).minus(new Vec(2, 3)));
+    console.log(new Vec(3, 4).length);
+
+</script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>

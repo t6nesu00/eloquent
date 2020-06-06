@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there! Inspect the changes from console.</h2>
+    <!-- write class Vec that represent two dimensional space -->
+
+<script>    
+    class Group {
+        constructor() {
+            this.elements = [];
+        }
+        add(value) {
+            if(!this.elements == value) {
+                this.elements.push(value);
+            }
+        }
+        delete(value) {
+            // filter function creates a new array with elements
+            // that pass the test implemented by the given function
+            this.elements = this.elements.filter( v => v !== value);
+        }
+        has(value) {
+            return this.elements.includes(value);
+        }
+        from(value) {
+            let group = new Group;
+            for(let value of collection) {
+                group.add(value);
+            }
+            return group;
+        }
+    }
+
+    class IterableGroup {
+        constructor(group) {
+            this.group = group;
+            this.position = 0;
+        }
+        next() {
+            if(this.position >= this.group.elements.length) {
+                retrun {done: true};
+            } 
+            else 
+            {
+                let result = {value: this.group.members[this.position], done: false};
+                this.position++;
+                return result;    
+            }
+        }
+    }
+    for (let value of Group.from(["a", "b", "c"])) {
+        console.log(value);
+    }
+    console.log("ok");
+</script>
+
+    <!-- -->
+</body>
+</html>

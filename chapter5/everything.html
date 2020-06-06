@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Hello there!</h2>
+   <!-- implement every function that takes array and predict function as paramerter -->
+    
+    <script>
+        // every method determines whether all elements of the array match the predict
+        const every = (array, predict) => {
+           for(let element of array) {
+               if(!predict(element)) return false;
+           } 
+           return true;
+        }
+
+        const every2 = (array, predict) => {
+            // some method determines whether at least one element of the array matches the given predict
+            // it only returns false if none of the array elements match the prediction
+            return !array.some(element => !predict(element));
+        }
+
+        console.log(every([10, 20, 30], n => n % 10 === 0));
+        console.log(every([10, 20, 30], n => n % 10 === 0));
+    </script>
+
+    <!--solved by Suman Nepali May 2020-->
+</body>
+</html>
