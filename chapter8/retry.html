@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Make a function that use try catch feature -->
+    <script>
+        class MultiplicatorUnitFailure extends Error {}
+
+        // function that will multiply provided number only 20% rest 80% gives error
+        function primitiveMultiply(m, n) {
+            if(Math.random() >= 0.8) {
+                return m * n;
+            }
+            else {
+                throw new MultiplicatorUnitFailure("We have error");
+        }
+        }
+        // function to keep trying no error
+        function getMultiplication(m, n) {
+            for(;;) {
+                try {
+                    return primitiveMultiply(m, n);
+                }
+                catch(e) {
+                    if(!(e instanceof MultiplicatorUnitFailure))
+                    throw e;
+                }
+            }
+        }
+        console.log(getMultiplication(5, 8));
+    </script>
+    <!-- Solved by Suman Nepali -->
+</body>
+</html>

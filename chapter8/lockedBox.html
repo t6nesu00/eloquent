@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- unlock the box -->
+    <script>
+       const box = {
+         locked: true,
+         unlock() {this.locked = false;},
+         lock() {this.locked = true;}, 
+         _content : [],
+         get content() {
+           if(this.locked) throw new Error("Locked!");
+           return this._content;
+         }
+       };
+       // function to check if locked or unlocked
+       // if unlocked run the function
+       // finally again lock the box
+       function withBoxUnlocked(todo) {
+         let locked = box.locked;
+         if(!locked) {
+           return todo();
+         }
+         box.unlock();
+         try {
+           return todo();
+         }
+         finally {
+           box.lock();
+         }
+       }
+       // call the function
+       withBoxUnlocked(function () {
+         box.content.push("Some thing");
+       });
+
+       try {
+         withBoxUnlocked(function () {
+           throw new Error("Some problem");
+         });
+       } catch(e) {
+         console.log("Error:", e);
+       }
+       console.log(box.checked);
+
+    </script>
+    <!-- Solved by Suman Nepali -->
+</body>
+</html>
